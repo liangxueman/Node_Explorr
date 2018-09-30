@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+<div class="container">
+  <h2 style="text-align: center">Log In to Outdoorr</h2>
+  <div style="width:36%; margin: 30px auto;">
+    <form action="/login" method="POST">
+      <div class="form-group col-md-12">
+        <input class="form-control" type="text" name="username" placeholder="Username" required>
+      </div>
+      <div class="form-group col-md-12">
+        <input class="form-control" type="password" name="password" placeholder="Password" required>
+      </div>
+      <div class="form-group col-md-12">
+        <button class="btn btn-primary btn-md btn-block">Login</button>
+      </div>
+    </form>
+    <div class="col-md-12">
+      <a class="float-right" href="/forgot">Forgot password?</a>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>

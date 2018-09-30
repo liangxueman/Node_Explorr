@@ -1,0 +1,20 @@
+<% include partials/header %>
+
+<div class="container">
+  <h2 style="text-align: center">Reset Password for Outdoorr</h2>
+  <div style="width: 30%; margin: 30px auto">
+    <p>Please enter your email address and we will send you an email about how to reset your password.</p>
+    <form action="/forgot" method="POST">
+      <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" type="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <button class="form-control btn btn-primary btn-md">Send</button>
+      </div>
+    </form>
+    <a class="float-right" href="/login">Back to Login</a>
+  </div>
+</div>
+
+<% include partials/footer %>

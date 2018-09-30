@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <div class="profile-header"><%= viewUser.username %></div>
+
+  <div style="width: 80%; margin: 10px auto;">
+    <div class="row well">
+      <div class="col-md-4">
+        <image class="img-responsive profile-image" src="https://adventureflow.us/wp-content/uploads/2015/01/Salmoncreek-34.jpg"></image></br>
+        <p>Name: <%= viewUser.firstname %> <%= viewUser.lastname %></p>
+        <p>Email: <%= viewUser.email %></p>
+        <% if(user && user._id.equals(viewUser._id)) { %>
+        <a class="btn btn-warning btn-xs" href="/users/<%= viewUser._id %>/edit">Edit</a>
+        <% } %>
+      </div>
+      <div class="col-md-8">
+        <h3>Post History</h3>
+        <ul class="media-list">
+          <% viewCampgrounds.forEach(function(campground) { %>
+            <li class="media">
+              <div class="pull-left">
+                <image class="media-object" style="height:80px;" src="<%= campground.image %>"></image>
+              </div>
+              <div class="media-body">
+                <div class="pull-right"><em><%= moment(campground.created_at).format("LLLL"); %></em></div>
+                <h5 class="media-heading"><a href="/campgrounds/<%= campground._id %>"><%= campground.name %></a></h5>
+                <p><%- campground.description.substring(0, 120) %>...</p>
+              </div>
+            </li>
+            <hr>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>

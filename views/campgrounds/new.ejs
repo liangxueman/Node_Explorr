@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <h1 style="text-align: center">Add a New Campground</h1>
+    <div style="width: 30%; margin: 30px auto">
+      <!--' enctype="multipart/form-data" ' is needed when the form includes any <input type="file"> elements-->
+      <form action="/campgrounds" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>Campground Name</label>
+          <input class="form-control" type="text" name="campground[name]" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input class="form-control" type="text" name="campground[location]" placeholder="Yosemite National Park, CA" required>
+        </div>
+        <div class="form-group">
+          <label>Price ($ per night)</label>
+          <input class="form-control" type="number" name="campground[price]" placeholder="Price" min="0.00" step="0.01">
+        </div>
+        <div class="form-group">
+          <label>Image</label>
+          <input class="form-control" type="file" name="image" accept="image/*" required>
+        </div>
+        <div class="form-group">
+          <label for="campground_textarea">Description</label>
+          <textarea class="form-control" name="campground[description]" id="campground_textarea" rows="6"></textarea>
+        </div>
+        <div class="form-group"><button class="btn btn-lg btn-primary btn-block">Submit</button></div>
+      </form>
+      <a href="/campgrounds">Go back to campgrounds page</a>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

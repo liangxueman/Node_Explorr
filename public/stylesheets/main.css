@@ -1,0 +1,99 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.black {
+  color: black;
+}
+
+.black:hover {
+  text-decoration: none;
+  color: #666f7c;
+}
+
+.grey_button {
+  color: #404142;
+  background-color: #bdbebf;
+  border-color: #bdbebf;
+}
+
+.grey_button:hover {
+  color: #f7fafc;
+  background-color: #bdbebf;
+  border-color: #bdbebf;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail img {
+   width: 100%;
+}
+
+.caption-full {
+    padding: 10px;
+}
+
+.profile-header {
+  text-align: center;
+  font-weight: 600;
+  font-size: 4em;
+}
+
+.profile-image {
+  border-radius: 10px;
+}
+
+.media-heading {
+  margin-bottom: 10px;
+}
+
+.search_form {
+  margin-top:10px; 
+  /*margin-bottom:3px;*/
+}
+
+.search_form .form-control {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  height: 30px;
+}
+
+.search_form .btn {
+  border: 1px solid #ccc;
+  margin-left: -5px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+#delete_form_campground {
+  display: inline;
+}
+
+#delete_form_comment {
+  display: inline;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}

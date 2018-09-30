@@ -1,0 +1,63 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <header class="jumbotron">
+    <div class="container">
+      <h1>Welcome To Outdoorr</h1>
+      <p>View our hand-picked campgrounds from all over the world</p>
+      <p>
+        <a class="btn btn-lg grey_button" href="campgrounds/new">Add new campground</a>
+      </p>
+    </div>
+  </header>
+  
+  <h3>Our Most Polular Campgrounds</h3>
+  <div class="row" style="display: flex; flex-wrap: wrap">
+    <% campgrounds.forEach(function(campground) { %>
+    <div class="col-md-3 col-sm-6">
+      <div class="thumbnail">
+        <img src="<%= campground.image %>">
+        <div class="caption">
+          <h4><%= campground.name %></h4>
+          <span><a href="/campgrounds/<%= campground._id %> " class="btn btn-sm grey_button">More Info</a></span>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+  
+  <div class="row text-center">
+    <% if(pages && pages > 0) { %>
+      <ul class="pagination text-center">
+        <% if(currentPage == 1) { %>
+          <li class="disabled"><a>First</a></li>
+        <% } else { %>
+          <li><a href="/campgrounds?page=1">First</a></li>
+        <% } %>
+        
+        <% var i = (Number(currentPage) > 5 ? Number(currentPage) - 4 : 1); %>
+        <% if(i != 1) { %>
+          <li class="disabled"><a>...</a></li>
+        <% } %>
+        <% for(; (i <= Number(currentPage) + 4) && i <= pages; i++) { %>
+          <% if(i == currentPage) { %>
+            <li class="active"><a><%= i %></a></li>
+          <% } else { %>
+            <li><a href="/campgrounds?page=<%= i %>"><%= i %></a></li>
+          <% } %>
+          <% if(i == Number(currentPage + 4) && i < pages) { %>
+            <li class="disabled"><a>...</a></li>
+          <% } %>
+        <% } %>
+        
+        <% if(currentPage == pages) { %>
+          <li class="disabled"><a>Last</a></li>
+        <% } else { %>
+          <li><a href="/campgrounds?page=<%= pages %>">Last</a></li>
+        <% } %>
+      </ul>
+    <% } %>
+  </div>
+</div>
+
+<% include ../partials/footer %>
